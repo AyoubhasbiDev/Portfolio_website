@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.box-shadow {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  animation: slide-top 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bg-gradient {
+  background: linear-gradient(
+    45deg,
+    rgba(242, 243, 247, 1) 0%,
+    rgba(230, 231, 234, 1) 30%
+  );
+}
+.text-gradient {
+  background-image: linear-gradient(to left right, #39b385, #9be15d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-title {
+  font-family: Poppins, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative;
+}
+.section-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: #39b385;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  background-color: #9be15d;
+}
+
+.education__card ::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 120%;
+  background-color: #f2f3f7;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.education__card ::after {
+  content: url(./assets/educaion_icon.svg);
+  position: absolute;
+  width: 40px;
+  left: -45px;
+  top: 30px;
+}
+
+/* Keyframes*/
+@keyframes slide-top {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
